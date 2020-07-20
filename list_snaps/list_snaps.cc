@@ -140,6 +140,10 @@ int main(int argc, const char** argv) {
   app.add_option("-p,--pool", pool_name, "pool name");
   app.add_option("oid", oid, "object name")
       ->required(true);
+  app.allow_extras(true);
+
+  // print help
+  CLI11_PARSE(app, argc, argv);
 
   int rem_argc = 0;
   const char** rem_argv = new const char*[argc];
@@ -158,6 +162,8 @@ int main(int argc, const char** argv) {
     cluster.shutdown();
   });
 
+  // do the real parsing
+  app.allow_extras(false);
   CLI11_PARSE(app, rem_argc, rem_argv);
 
   librados::IoCtx ioctx;
