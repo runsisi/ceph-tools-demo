@@ -132,7 +132,7 @@ namespace librados {
 }
 
 int main(int argc, const char** argv) {
-  CLI::App app{"test_snap_set_diff"};
+  CLI::App app{"list-snaps"};
 
   std::string pool_name{"rbd"};
   std::string oid;
