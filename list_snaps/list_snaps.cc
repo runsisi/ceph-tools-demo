@@ -74,6 +74,7 @@ int connect_cluster(librados::Rados& cluster,
   });
   r = cluster.conf_parse_argv_remainder(new_argc, new_argv, rem_argv);
   if (r) {
+    cluster.shutdown();
     std::ostringstream oss;
     oss << "cluster.conf_parse_argv_remainder failed with error: "
         << strerror(-r);
