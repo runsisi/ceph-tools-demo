@@ -5,6 +5,7 @@ target_compile_options(list-snaps PRIVATE
   "-g"
 )
 target_link_libraries(list-snaps PRIVATE
+  common
   rbd
   rados
   ceph-common

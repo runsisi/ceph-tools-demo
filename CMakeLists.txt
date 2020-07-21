@@ -55,4 +55,5 @@ link_directories(
   ${PROJECT_SOURCE_DIR}/../build/lib
 )
 
+add_subdirectory(common)
 add_subdirectory(list_snaps)
